@@ -1,0 +1,11 @@
+{
+    "configuracion": {
+        "ruta_logs": "c:\\var\\asistencia\\log\\",
+        "ruta_temp": "c:\\var\\asistencia\\temp\\",
+        "ruta_config": "c:\\var\\asistencia\\config\\",
+        "modo_log": "INFO",
+        "nombre_app": "ASISTENCIA",
+        "ambiente": "PROD",
+        "formato_log": "JSON"
+    }
+}

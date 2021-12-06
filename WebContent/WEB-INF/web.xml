@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <!-- This is a context init parameter -->
+    <context-param>
+        <param-name>clase_operaciones_servicios</param-name>
+        <param-value>servicios.OperacionesServicios</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>archivo_configuracion</param-name>
+        <param-value>config/config.json</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>variable_entorno_configuracion</param-name>
+        <param-value>CONFIG_AUDROX_API</param-value>
+    </context-param>    
+    
+    <servlet>
+        <servlet-name>servicios</servlet-name>
+        <servlet-class>servicios.Servicios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servicios</servlet-name>
+        <url-pattern>/servicios/*</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <filter>
+        <filter-name>NewFilter</filter-name>
+        <filter-class>servicios.NewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>NewFilter</filter-name>
+        <url-pattern>/servicios/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+</web-app>
